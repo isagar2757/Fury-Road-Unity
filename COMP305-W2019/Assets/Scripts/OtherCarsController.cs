@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class OtherCarControl : MonoBehaviour
 {
-
-    //PUBLIC VARIABLES
+     //PUBLIC VARIABLES
     public float speed = 10.0f;
    
 
@@ -27,11 +26,8 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float horiz = Input.GetAxis("Horizontal");
-        
-
-        rBody.velocity = new Vector2(horiz*speed, rBody.velocity.y);
         
        
     }
 }
+
