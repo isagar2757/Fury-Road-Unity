@@ -34,4 +34,12 @@ public class PlayerController : MonoBehaviour
         
        
     }
+
+    // void OnCollisionEnter(Collision other)
+    // {
+    //     if( other.gameObject.name=="copCar")
+    //     {
+    //         Destroy(other.gameObject);
+    //     }
+    // }
 }

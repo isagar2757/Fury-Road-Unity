@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 307933439}
   - component: {fileID: 307933438}
   - component: {fileID: 307933437}
+  - component: {fileID: 307933441}
   m_Layer: 0
   m_Name: copCar
   m_TagString: Untagged
@@ -172,7 +173,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.2
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -234,12 +235,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307933436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.63, y: 2.39, z: 0}
+  m_LocalPosition: {x: -1.4, y: 5.96, z: 0}
   m_LocalScale: {x: 1.755574, y: 1.437606, z: 11.35115}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307933441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307933436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccaeca8e9c054d68b25203cba1e1ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +452,7 @@ GameObject:
   - component: {fileID: 1501288240}
   - component: {fileID: 1501288239}
   - component: {fileID: 1501288241}
+  - component: {fileID: 1501288242}
   m_Layer: 0
   m_Name: fuelCar
   m_TagString: Untagged
@@ -534,6 +548,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.09, y: 1.89}
   m_EdgeRadius: 0
+--- !u!50 &1501288242
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501288238}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0.02
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
 --- !u!1 &1724658496
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,14 +957,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043114649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2faced70f6f43558f1ca906b1d114b, type: 3}
+  m_Script: {fileID: 11500000, guid: 96fe15bc4fc964117b4a737bb016198f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 0.5
-  offset: {x: 0, y: 0}
+  scrollSpeed: 1
+  tileSizeZ: 0

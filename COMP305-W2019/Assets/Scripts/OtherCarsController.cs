@@ -2,32 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OtherCarControl : MonoBehaviour
+public class OtherCarsController : MonoBehaviour
 {
      //PUBLIC VARIABLES
-    public float speed = 10.0f;
-   
-
-
-    //PRIVATE VARIABLES
-    private Rigidbody2D rBody;
-
-    //Reserved function runs only once when the object is created 
-    //Used for initialization
-    void Start()
+     /// <summary>
+    /// OnCollisionEnter is called when this collider/rigidbody has begun
+    /// touching another rigidbody/collider.
+    /// </summary>
+    /// <param name="other">The Collision data associated with this collision.</param>
+    void OnCollisionEnter(Collision other)
     {
-        rBody = GetComponent<Rigidbody2D>();
-    }
-    // Start is called before the first frame update
-
-        void Update()
-    {
-       
-    }
-    void FixedUpdate()
-    {
-        
-       
+        if(other.gameObject.name == "road" || other.gameObject.name=="copCar")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
 
