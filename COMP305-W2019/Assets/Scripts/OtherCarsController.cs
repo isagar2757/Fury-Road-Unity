@@ -10,12 +10,11 @@ public class OtherCarsController : MonoBehaviour
     /// touching another rigidbody/collider.
     /// </summary>
     /// <param name="other">The Collision data associated with this collision.</param>
-    void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.name == "road" || other.gameObject.name=="copCar")
-        {
-            Destroy(other.gameObject);
-        }
-    }
+    void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("Background")) {
+			other.gameObject.SetActive(false);
+		}
+	}
 }
 
