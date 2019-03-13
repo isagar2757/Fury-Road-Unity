@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public GameObject CoinSprite,obstacle1,fuelCar;
     public GameObject enemy1,enemy2,enemy3,copCar;
+
+    public GameObject boss;
     
      public Text scoreTxt,healthTxt;
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         scoreCount = 0;
         health = 5;
         rBody = GetComponent<Rigidbody2D>();
+        boss.SetActive(false);
         // obstacleAnim = gameObject.GetComponent<Animator>();
         // InvokeRepeating("animSpeed",10f,10f);
         // InvokeRepeating("checkCollision",4f,4f);
@@ -110,8 +113,17 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.CompareTag("coin")) {
 			other.gameObject.SetActive(false);
             Invoke("checkCollision",2f);
-            scoreCount += 10;
-            setScore();
+            if(scoreCount<50)
+            {
+                scoreCount += 10;
+                setScore();
+            }
+            else
+            {
+                bringBoss();
+            }
+            
+            
             
 		}
         else
@@ -169,5 +181,17 @@ public class PlayerController : MonoBehaviour
     void setHealth()
     {
         healthTxt.text = "Health: "+ health.ToString();
+    }
+
+    void bringBoss()
+    {
+        CoinSprite.SetActive(false);
+        obstacle1.SetActive(false);
+        fuelCar.SetActive(false);
+        enemy1.SetActive(false);
+        enemy2.SetActive(false);
+        enemy3.SetActive(false);
+        copCar.SetActive(false);
+        boss.SetActive(true);
     }
 }
