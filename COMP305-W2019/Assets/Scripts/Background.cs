@@ -1,17 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Background : MonoBehaviour
 {
-    public float scrollSpeed = 0.3f;
+    public float scrollSpeed = 0.6f;
+   
 
    
-    // void Start()
-    // {
-    //     InvokeRepeating("MoveBG",0.5f,0.5f);
-    // }
+    void Start()
+    {
+        InvokeRepeating("scrollSpeedIncrese",30f,30f);
+    }
 
+    void scrollSpeedIncrese()
+    {
+        scrollSpeed += 0.2f;
+        Debug.Log("Scroll Speed Increased: " + scrollSpeed);
+    }
     // void MoveBG()
     // {
     //     GetComponent<Renderer>().material.mainTextureOffset = 
@@ -27,10 +34,5 @@ public class Background : MonoBehaviour
             new Vector2(0,Time.time * scrollSpeed);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-	{
-		if (other.gameObject.CompareTag("copCar")) {
-			other.gameObject.SetActive(false);
-		}
-	}
+    
 }
