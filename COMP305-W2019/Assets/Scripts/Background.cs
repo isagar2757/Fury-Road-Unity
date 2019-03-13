@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class Background : MonoBehaviour
 {
     public float scrollSpeed = 0.6f;
-   
+    
 
    
     void Start()
     {
+        
+
         InvokeRepeating("scrollSpeedIncrese",30f,30f);
     }
 

@@ -9,15 +9,15 @@ public class PlayerController : MonoBehaviour
 
     //PUBLIC VARIABLES
     public float speed = 10.0f;
-    public GameObject CoinSprite;
-    public GameObject obstacle1;
-    public GameObject fuelCar;
+    public GameObject CoinSprite,obstacle1,fuelCar;
+    public GameObject enemy1,enemy2,enemy3,copCar;
     
-     public Text scoreTxt;
-     public Text healthTxt;
+     public Text scoreTxt,healthTxt;
 
-     public int scoreCount;
-     public int health;
+     public int scoreCount,health;
+
+
+    //  public Animator obstacleAnim;
 
     //PRIVATE VARIABLES
     private Rigidbody2D rBody;
@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         scoreCount = 0;
         health = 5;
         rBody = GetComponent<Rigidbody2D>();
+        // obstacleAnim = gameObject.GetComponent<Animator>();
+        // InvokeRepeating("animSpeed",10f,10f);
         // InvokeRepeating("checkCollision",4f,4f);
        // CoinSprite = GameObject.Find("CoinSprite");
         
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour
     }
     // Start is called before the first frame update
 
+    // void animSpeed()
+    // {
+    //      obstacleAnim.speed += 0.3f;
+    //      Debug.Log("Animation Speed " + obstacleAnim.speed);
+    // }
         void Update()
     {
        
@@ -57,16 +64,43 @@ public class PlayerController : MonoBehaviour
         {
             obstacle1.SetActive(true);
         }
+        else
+        if(enemy1.activeSelf == false)
+        {
+            enemy1.SetActive(true);
+        }
+        else
+        if(enemy2.activeSelf == false)
+        {
+            enemy2.SetActive(true);
+        }
+        else
+        if(enemy3.activeSelf == false)
+        {
+            enemy3.SetActive(true);
+        }
+        else
+        if(copCar.activeSelf == false)
+        {
+            copCar.SetActive(true);
+        }
         
 
-         //Debug.Log("Coin Self: " + CoinSprite.activeSelf);
+         Debug.Log("COP Self: " + copCar.activeSelf);
     }
     void FixedUpdate()
     {
-        float horiz = Input.GetAxis("Horizontal");
+        // float horiz = Input.GetAxis("Horizontal");
         
 
-        rBody.velocity = new Vector2(horiz*speed, rBody.velocity.y);
+        // rBody.velocity = new Vector2(horiz*speed, rBody.velocity.y);
+
+        float moveHorizontal = Input.GetAxis("Horizontal");
+		float moveVertical = Input.GetAxis("Vertical");
+
+		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
+		rBody.AddForce(movement * speed);
         
        
     }
@@ -102,7 +136,24 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Level1");
+                SceneManager.LoadScene("End");
+            }
+            
+            setHealth();
+            
+		}
+        else
+        if (other.gameObject.CompareTag("cop")) {
+            Debug.Log("cop");
+			other.gameObject.SetActive(false);
+            Invoke("checkCollision",2f);
+            if(health >2 )
+            {
+                health -= 2;
+            }
+            else
+            {
+                SceneManager.LoadScene("End");
             }
             
             setHealth();
