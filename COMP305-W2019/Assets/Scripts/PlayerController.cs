@@ -90,17 +90,17 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // float horiz = Input.GetAxis("Horizontal");
+        float horiz = Input.GetAxis("Horizontal");
         
 
-        // rBody.velocity = new Vector2(horiz*speed, rBody.velocity.y);
+        rBody.velocity = new Vector2(horiz*speed, rBody.velocity.y);
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-		float moveVertical = Input.GetAxis("Vertical");
+        // float moveHorizontal = Input.GetAxis("Horizontal");
+		// float moveVertical = Input.GetAxis("Vertical");
 
-		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+		// Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
-		rBody.AddForce(movement * speed);
+		// rBody.AddForce(movement * speed);
         
        
     }
