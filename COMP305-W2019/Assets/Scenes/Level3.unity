@@ -409,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 362448759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.465714, y: 5.275459, z: 8.135178}
-  m_LocalScale: {x: 1.755574, y: 1.437606, z: 11.35115}
+  m_LocalScale: {x: 4, y: 4, z: 11.35115}
   m_Children: []
   m_Father: {fileID: 730786503}
   m_RootOrder: 3
@@ -451,7 +451,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 943bd0e26e8cc450ba03f4fdf3a0ba57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b7b152b11d0d47f69bf664ff55d77ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1536,7 +1536,7 @@ SpriteRenderer:
   m_SortingLayerID: 296986781
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ce1cdef124824f0bb484e2815c71e4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48b34083fef8d42578698b708d636c20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1556,7 +1556,7 @@ Transform:
   m_GameObject: {fileID: 1876609435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.42, y: -3.71, z: 0}
-  m_LocalScale: {x: 1.755574, y: 1.4376062, z: 11.351147}
+  m_LocalScale: {x: 6, y: 6, z: 11.351147}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1595,18 +1595,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00783667, y: -0.024218678}
+  m_Offset: {x: 0.0008584112, y: 0.020578414}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 2.04}
+    oldSize: {x: 0.65, y: 0.65}
     newSize: {x: 61, y: 23.900002}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0803888, y: 2.0995314}
+  m_Size: {x: 0.55891335, y: 0.41746056}
   m_EdgeRadius: 0
 --- !u!114 &1876609440
 MonoBehaviour:
@@ -1624,6 +1624,11 @@ MonoBehaviour:
   CoinSprite: {fileID: 1724658496}
   obstacle1: {fileID: 758687261}
   fuelCar: {fileID: 1501288238}
+  enemy1: {fileID: 0}
+  enemy2: {fileID: 0}
+  enemy3: {fileID: 0}
+  copCar: {fileID: 0}
+  boss: {fileID: 0}
   scoreTxt: {fileID: 1015890894}
   healthTxt: {fileID: 1586469072}
   scoreCount: 0
@@ -1686,7 +1691,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 83eda0199bc1048628838cebb04e529c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efc1cfa0cabf342e98d351178b283a4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1705,8 +1710,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043114649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.041, y: -0.708, z: 0}
-  m_LocalScale: {x: 2.25965, y: 1.660382, z: 1}
+  m_LocalPosition: {x: 0.003, y: -0.708, z: 0}
+  m_LocalScale: {x: 3.1987708, y: 1.660382, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1782,7 +1787,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.5
-  obstacleAnim: {fileID: 770856350}
 --- !u!1 &2113893202
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public GameObject enemy1,enemy2,enemy3,copCar;
 
     public GameObject boss;
+
+    public GameObject bullet;
     
      public Text scoreTxt,healthTxt;
 
@@ -48,7 +50,12 @@ public class PlayerController : MonoBehaviour
     // }
         void Update()
     {
-       
+       if (Input.GetKeyDown("space")) {
+        // Create a new bullet at “transform.position” 
+        // Which is the current position of the ship
+        // Quaternion.identity = add the bullet with no rotation
+        Instantiate(bullet, transform.position, transform.rotation);
+    }
     }
 
     void checkCollision()
@@ -97,6 +104,8 @@ public class PlayerController : MonoBehaviour
         
 
         rBody.velocity = new Vector2(horiz*speed, rBody.velocity.y);
+
+        
 
         // float moveHorizontal = Input.GetAxis("Horizontal");
 		// float moveVertical = Input.GetAxis("Vertical");
