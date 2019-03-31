@@ -25,7 +25,7 @@ public class boss3 : MonoBehaviour
    void Die()
    {
        Destroy(gameObject);
-       SceneManager.LoadScene("End");
+       SceneManager.LoadScene("Win");
    }
 
     void oilRelease()
