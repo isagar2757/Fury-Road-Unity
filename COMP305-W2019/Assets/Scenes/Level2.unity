@@ -1058,6 +1058,7 @@ MonoBehaviour:
   speed: 6
   hitCount: 0
   damage: 10
+  effect: {fileID: 6860105916932365925, guid: 51823110c03cc4c8eb3d8dd73b3c0779, type: 3}
 --- !u!1 &1015890892
 GameObject:
   m_ObjectHideFlags: 0

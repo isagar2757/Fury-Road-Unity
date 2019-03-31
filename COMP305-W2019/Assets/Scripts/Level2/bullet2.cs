@@ -12,6 +12,7 @@ public class bullet2 : MonoBehaviour
    // public GameObject boss;
     public int damage = 10;
     private Rigidbody2D rBody;
+    public GameObject effect;
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
@@ -34,10 +35,13 @@ public class bullet2 : MonoBehaviour
         // Destroy(gameObject);
         if(l1Boss != null)
         {
+            Instantiate(effect, transform.position, transform.rotation);
             l1Boss.TakeDamage(damage);
+            
         }
         
         
+       
     
     }
     

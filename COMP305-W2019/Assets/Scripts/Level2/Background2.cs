@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Background2: MonoBehaviour
 {
-    public float scrollSpeed = 0.9f;
+    public float scrollSpeed = 0.7f;
     
 
    
@@ -18,7 +18,7 @@ public class Background2: MonoBehaviour
 
     void scrollSpeedIncrese()
     {
-        scrollSpeed += 0.3f;
+        scrollSpeed += 0.2f;
         Debug.Log("Scroll Speed Increased: " + scrollSpeed);
     }
     // void MoveBG()

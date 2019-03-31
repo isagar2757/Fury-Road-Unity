@@ -12,12 +12,14 @@ public class boss2 : MonoBehaviour
    
     public void TakeDamage(int damage)
     {
+        
         Invoke("oilRelease",2f);
         health -= damage;
         if(health <= 0)
         {
             Die();
         }
+
     }
 
    void Die()
