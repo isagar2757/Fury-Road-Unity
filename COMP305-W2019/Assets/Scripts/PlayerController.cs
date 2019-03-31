@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     //PUBLIC VARIABLES
     public float speed = 10.0f;
     public GameObject CoinSprite,obstacle1,fuelCar;
-    public GameObject enemy1,enemy2,enemy3,copCar;
+    public GameObject enemy1,enemy2,enemy3,copCar, truck2;
 
     public GameObject boss;
 
@@ -88,6 +88,11 @@ public class PlayerController : MonoBehaviour
         if(enemy3.activeSelf == false)
         {
             enemy3.SetActive(true);
+        }
+        else
+        if(truck2.activeSelf == false)
+        {
+            truck2.SetActive(true);
         }
         else
         if(copCar.activeSelf == false)
@@ -201,6 +206,7 @@ public class PlayerController : MonoBehaviour
         enemy2.SetActive(false);
         enemy3.SetActive(false);
         copCar.SetActive(false);
+        truck2.SetActive(false);
         boss.SetActive(true);
     }
 }
