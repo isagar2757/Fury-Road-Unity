@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.CompareTag("coin")) {
 			other.gameObject.SetActive(false);
             Invoke("checkCollision",2f);
-            if(scoreCount<10)
+            if(scoreCount<30)
             {
                 scoreCount += 10;
                 setScore();
