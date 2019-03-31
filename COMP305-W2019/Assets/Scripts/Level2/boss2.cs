@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class boss : MonoBehaviour
+public class boss2 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int health = 100;
+    public int health = 200;
     public GameObject effect;
     public void TakeDamage(int damage)
     {
@@ -20,6 +20,6 @@ public class boss : MonoBehaviour
    void Die()
    {
        Destroy(gameObject);
-       SceneManager.LoadScene("Level2");
+       SceneManager.LoadScene("End");
    }
 }

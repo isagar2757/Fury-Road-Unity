@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
 
     //PUBLIC VARIABLES
     public float speed = 10.0f;
-    public GameObject CoinSprite,obstacle1,fuelCar;
-    public GameObject enemy1,enemy2,enemy3,copCar;
+    public GameObject CoinSprite,obstacle1,fuelCar, fuel1 , CoinSprite2;
+    public GameObject enemy1,enemy2,enemy3,copCar, truck2;
 
     public GameObject boss;
 
@@ -89,7 +89,21 @@ public class PlayerController : MonoBehaviour
         {
             enemy3.SetActive(true);
         }
-        
+        else
+        if(truck2.activeSelf == false)
+        {
+            truck2.SetActive(true);
+        }
+        else
+        if(CoinSprite2.activeSelf == false)
+        {
+            CoinSprite2.SetActive(true);
+        }
+        else
+        if(fuel1.activeSelf == false)
+        {
+            fuel1.SetActive(true);
+        }
         else
         if(copCar.activeSelf == false)
         {
@@ -122,7 +136,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("coin")) {
 			other.gameObject.SetActive(false);
-            Invoke("checkCollision",2f);
+            Invoke("checkCollision",4f);
             if(scoreCount<10)
             {
                 scoreCount += 10;
@@ -139,7 +153,7 @@ public class PlayerController : MonoBehaviour
         else
         if (other.gameObject.CompareTag("fuel")) {
 			other.gameObject.SetActive(false);
-            Invoke("checkCollision",2f);
+            Invoke("checkCollision",4f);
             if(health < 5)
             {
                 health += 1;
@@ -151,7 +165,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("obstacle")) {
             Debug.Log("Obstacle");
 			other.gameObject.SetActive(false);
-            Invoke("checkCollision",2f);
+            Invoke("checkCollision",4f);
             if(health >1 )
             {
                 health -= 1;
@@ -167,8 +181,9 @@ public class PlayerController : MonoBehaviour
         else
         if (other.gameObject.CompareTag("cop")) {
             Debug.Log("cop");
+            Debug.Log(health);
 			other.gameObject.SetActive(false);
-            Invoke("checkCollision",2f);
+            Invoke("checkCollision",4f);
             if(health >2 )
             {
                 health -= 2;
@@ -196,12 +211,15 @@ public class PlayerController : MonoBehaviour
     void bringBoss()
     {
         CoinSprite.SetActive(false);
+        CoinSprite2.SetActive(false);
         obstacle1.SetActive(false);
         fuelCar.SetActive(false);
+        fuel1.SetActive(false);
         enemy1.SetActive(false);
         enemy2.SetActive(false);
         enemy3.SetActive(false);
         copCar.SetActive(false);
+        truck2.SetActive(false);
         boss.SetActive(true);
     }
 }
