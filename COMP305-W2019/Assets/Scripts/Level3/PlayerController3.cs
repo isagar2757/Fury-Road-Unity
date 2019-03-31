@@ -138,7 +138,7 @@ public class PlayerController3 : MonoBehaviour
 		if (other.gameObject.CompareTag("coin")) {
 			other.gameObject.SetActive(false);
             
-            if(scoreCount<100)
+            if(scoreCount<10)
             {
                 scoreCount += 10;
                 Invoke("checkCollision",2f);
@@ -222,6 +222,7 @@ public class PlayerController3 : MonoBehaviour
         fuel1.SetActive(false);
         cloud.SetActive(false);
         cloud1.SetActive(false);
+        enemy1.SetActive(false);
         enemy2.SetActive(false);
         enemy3.SetActive(false);
         
