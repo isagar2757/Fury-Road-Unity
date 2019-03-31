@@ -9,10 +9,7 @@ public class boss2 : MonoBehaviour
     public int health = 200;
     public GameObject effect,oil;
 
-    void start()
-    {
-        Invoke("oilRelease",2f);
-    }
+   
     public void TakeDamage(int damage)
     {
         Invoke("oilRelease",2f);

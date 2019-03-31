@@ -212,7 +212,7 @@ public class PlayerController2 : MonoBehaviour
     {
         CoinSprite.SetActive(false);
         CoinSprite2.SetActive(false);
-        // obstacle1.SetActive(false);
+        obstacle1.SetActive(false);
         fuelCar.SetActive(false);
         fuel1.SetActive(false);
         enemy1.SetActive(false);
@@ -220,6 +220,10 @@ public class PlayerController2 : MonoBehaviour
         enemy3.SetActive(false);
         copCar.SetActive(false);
         truck2.SetActive(false);
+
+        // Background2 bg2= GetComponent<Background2>();
+        // bg2.scrollSpeed = 0f;
         boss.SetActive(true);
+        
     }
 }
