@@ -155,11 +155,11 @@ public class PlayerController3 : MonoBehaviour
         else
         if (other.gameObject.CompareTag("fuel")) {
 			other.gameObject.SetActive(false);
-            
+            Invoke("checkCollision",2f);
             if(health < 5)
             {
                 health += 1;
-                Invoke("checkCollision",2f);
+                
             }
             setHealth();
             
