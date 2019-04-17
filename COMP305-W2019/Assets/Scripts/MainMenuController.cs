@@ -10,6 +10,11 @@ public class MainMenuController : MonoBehaviour
        SceneManager.LoadScene("Level1");
    }
 
+   public void Info()
+   {
+       SceneManager.LoadScene("Info");
+   }
+
    public void QuitGame()
    {
        #if UNITY_EDITOR
