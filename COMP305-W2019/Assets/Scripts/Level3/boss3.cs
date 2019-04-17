@@ -10,16 +10,16 @@ public class boss3 : MonoBehaviour
     public GameObject effect,oil;
 
    
-    public void TakeDamage(int damage)
+    public int TakeDamage(int damage)
     {
         
-        oilRelease();
+        Invoke("oilRelease",1f);
         health -= damage;
         if(health <= 0)
         {
             Die();
         }
-
+        return health;
     }
 
    void Die()

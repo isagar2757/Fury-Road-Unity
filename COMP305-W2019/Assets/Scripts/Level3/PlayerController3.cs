@@ -138,7 +138,7 @@ public class PlayerController3 : MonoBehaviour
 		if (other.gameObject.CompareTag("coin")) {
 			other.gameObject.SetActive(false);
             
-            if(scoreCount<100)
+            if(scoreCount<40)
             {
                 scoreCount += 10;
                 Invoke("checkCollision",2f);
@@ -205,7 +205,7 @@ public class PlayerController3 : MonoBehaviour
 
     void setScore()
     {
-        scoreTxt.text = "Score: "+ scoreCount.ToString()+"/100";
+        scoreTxt.text = "Score: "+ scoreCount.ToString()+"/50";
     }
 
     void setHealth()
@@ -215,6 +215,8 @@ public class PlayerController3 : MonoBehaviour
 
     void bringBoss()
     {
+         scoreCount += 10;
+        setScore();
         CoinSprite.SetActive(false);
         CoinSprite1.SetActive(false);
         island.SetActive(false);

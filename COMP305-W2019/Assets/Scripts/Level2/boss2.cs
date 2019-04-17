@@ -13,7 +13,7 @@ public class boss2 : MonoBehaviour
     public int TakeDamage(int damage)
     {
         
-        Invoke("oilRelease",2f);
+        Invoke("oilRelease",1f);
         health -= damage;
         if(health <= 0)
         {

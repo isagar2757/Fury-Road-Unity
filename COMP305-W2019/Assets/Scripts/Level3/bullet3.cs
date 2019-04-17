@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class bullet3 : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,6 +13,10 @@ public class bullet3 : MonoBehaviour
     public int damage = 10;
     private Rigidbody2D rBody;
     public GameObject effect;
+
+    public Text bossHealthTxt;
+
+    public int bossHealth = 200;
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
@@ -36,7 +40,8 @@ public class bullet3 : MonoBehaviour
         if(l1Boss != null)
         {
             Instantiate(effect, transform.position, transform.rotation);
-            l1Boss.TakeDamage(damage);
+            bossHealth = l1Boss.TakeDamage(damage);
+            bossHealthTxt.text = "Boss : "+ bossHealth.ToString();
             
         }
         
