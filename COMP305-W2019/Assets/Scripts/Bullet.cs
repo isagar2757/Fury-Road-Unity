@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         {
             Instantiate(effect, transform.position, transform.rotation);
              bossHealth = l1Boss.TakeDamage(damage);
-            bossHealthTxt.text = "Health: "+ bossHealth.ToString();
+            bossHealthTxt.text = "Boss : "+ bossHealth.ToString();
             Debug.Log("Boss Health: " + bossHealth);
             
         }

@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
     void setScore()
     {
-        scoreTxt.text = "Score: "+ scoreCount.ToString()+"/50";
+        scoreTxt.text = "Score: "+ scoreCount.ToString()+"/20";
     }
 
     void setHealth()
@@ -200,6 +200,8 @@ public class PlayerController : MonoBehaviour
     }
     void bringBoss()
     {
+        scoreCount += 10;
+        setScore();
         CoinSprite.SetActive(false);
         obstacle1.SetActive(false);
         fuelCar.SetActive(false);

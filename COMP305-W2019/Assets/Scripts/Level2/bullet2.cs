@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bullet2 : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class bullet2 : MonoBehaviour
     private Rigidbody2D rBody;
     public GameObject effect;
 
-    
+    public Text bossHealthTxt;
+
+    public int bossHealth = 200;
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
@@ -39,7 +42,8 @@ public class bullet2 : MonoBehaviour
         if(l1Boss != null)
         {
             Instantiate(effect, transform.position, transform.rotation);
-            l1Boss.TakeDamage(damage);
+            bossHealth = l1Boss.TakeDamage(damage);
+            bossHealthTxt.text = "Boss : "+ bossHealth.ToString();
             
         }
         
