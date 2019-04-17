@@ -7,14 +7,18 @@ public class boss : MonoBehaviour
 {
     // Start is called before the first frame update
     public int health = 100;
+
+    
     public GameObject effect;
-    public void TakeDamage(int damage)
+    public int TakeDamage(int damage)
     {
         health -= damage;
         if(health <= 0)
         {
             Die();
         }
+        Debug.Log("Boss Health: " + health);
+        return health;
     }
 
    void Die()

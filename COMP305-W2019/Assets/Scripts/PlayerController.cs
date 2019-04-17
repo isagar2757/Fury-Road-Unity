@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bullet;
     
-     public Text scoreTxt,healthTxt;
+     public Text scoreTxt,healthTxt, bossHealthTxt;
 
      public int scoreCount,health;
 
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 		if (other.gameObject.CompareTag("coin")) {
 			other.gameObject.SetActive(false);
             Invoke("checkCollision",2f);
-            if(scoreCount<50)
+            if(scoreCount<10)
             {
                 scoreCount += 10;
                 setScore();
@@ -193,6 +193,11 @@ public class PlayerController : MonoBehaviour
         healthTxt.text = "Health: "+ health.ToString()+"/5";
     }
 
+    public void setBossHealth(int bossHealth)
+    {
+        int b = bossHealth;
+        bossHealthTxt.text = "Health: "+ b.ToString();
+    }
     void bringBoss()
     {
         CoinSprite.SetActive(false);
